@@ -1,0 +1,7 @@
+<Project>
+  <PropertyGroup>
+    <!-- The source lives in Google Drive, which refuses executables being written into a synced folder.
+         Build output goes to local app data instead (and stays out of the sync). -->
+    <ArtifactsPath>$(LOCALAPPDATA)\MorseKeyboard\artifacts</ArtifactsPath>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,16 @@
+# Build output (normally redirected to %LOCALAPPDATA% by Directory.Build.props, but just in case)
+bin/
+obj/
+artifacts/
+
+# IDE
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Google Drive / OS
+desktop.ini
+Thumbs.db
+.tmp.driveupload/
+.tmp.drivedownload/

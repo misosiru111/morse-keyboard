@@ -1,0 +1,14 @@
+{
+  "pixelsPerUnit": 3,
+  "ditRadius": 17,
+  "dahHalf": [31, 7.93],
+  "nameplate": [16, 14, 222, 62.14],
+  "offsets": {
+    "edge_h_shadow": [2.5, 4],
+    "edge_v_shadow": [2.5, 4],
+    "dit_shadow": [3, 4.5],
+    "dahh_shadow": [3, 4.5],
+    "dahv_shadow": [3, 4.5],
+    "root_shadow": [3, 4.5]
+  }
+}

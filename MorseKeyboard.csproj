@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <RootNamespace>MorseKeyboard</RootNamespace>
+    <AssemblyName>MorseKeyboard</AssemblyName>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Version>0.1.0</Version>
+    <!-- WFO0003 wants WinForms-style DPI config; this is a WPF app (WinForms only supplies the tray icon),
+         so per-monitor DPI stays in app.manifest. -->
+    <NoWarn>$(NoWarn);WFO0003</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NAudio.WinMM" Version="2.2.1" />
+  </ItemGroup>
+
+  <!-- Theme artwork ships as loose files so it can be edited without rebuilding (see design/ASSETS.md). -->
+  <ItemGroup>
+    <None Include="Assets\Themes\**\*.png;Assets\Themes\**\*.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <!-- Separate projects under tools/ (e.g. the starter-art generator) are not part of the app. -->
+  <ItemGroup>
+    <Compile Remove="tools\**" />
+    <Page Remove="tools\**" />
+    <None Remove="tools\**" />
+  </ItemGroup>
+
+</Project>
