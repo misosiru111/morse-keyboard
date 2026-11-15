@@ -99,7 +99,7 @@
 素材フォルダを指定して起動すると、画像を保存するたびに（1秒以内に）起動中のアプリに反映されます。
 
 ```powershell
-& "$env:LOCALAPPDATA\MorseKeyboard\artifacts\bin\MorseKeyboard\release\MorseKeyboard.exe" --assets "G:\マイドライブ\morse-keyboard\Assets\Themes"
+& "$env:LOCALAPPDATA\MorseKeyboard\artifacts\bin\MorseKeyboard\release\MorseKeyboard.exe" --assets ".\Assets\Themes"
 ```
 
 設定画面で「デザイン」を電信局にしておいてください。ファイルを足したり消したりしても反映されます。
@@ -109,7 +109,7 @@
 画像生成AIで作った写真（作り方は `design/prompts/telegraph.md`）を `design/raw/telegraph/` に置いて、次を実行します。
 
 ```powershell
-dotnet run --project tools\AssetKit -- import "G:\マイドライブ\morse-keyboard"
+dotnet run --project tools\AssetKit -- import .
 ```
 
 - 背景の切り抜き（影も除去）、大きさ合わせ、点灯版からの光の取り出し、棒のタイル化、影の生成をまとめて行います
@@ -121,7 +121,7 @@ dotnet run --project tools\AssetKit -- import "G:\マイドライブ\morse-keybo
 ## 叩き台を作り直す
 
 ```powershell
-dotnet run --project tools\AssetKit -- starter "G:\マイドライブ\morse-keyboard"
+dotnet run --project tools\AssetKit -- starter .
 ```
 
 `Assets/Themes/telegraph/` の画像をすべてコード描画の叩き台で上書きします。取り込んだ部品も消えるので、その後にもう一度 `import` を実行してください。
